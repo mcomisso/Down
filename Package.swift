@@ -1,4 +1,4 @@
-// swift-tools-version:5.1
+// swift-tools-version:5.3
 
 import PackageDescription
 
@@ -27,7 +27,10 @@ let package = Package(
             name: "Down",
             dependencies: ["libcmark"],
             path: "Source/",
-            exclude: ["cmark", "Down.h"]
+            exclude: ["cmark", "Down.h"],
+            resources: [
+                .copy("Resources")
+            ]
         ),
         .testTarget(
             name: "DownTests",
